@@ -1,118 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Palmero's Archive</title>
-  <script src="https://kit.fontawesome.com/642553ec8f.js" crossorigin="anonymous"></script>
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maki Palmero | Personal Archive</title>
 
-    h1 {
-      font-family: 'Roboto', 'Crimson Pro', serif;  
-      font-size: 70px;
-      color: #ffffff;
-      text-align: center;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
 
 
-    h3 {
-      font-family: 'Roboto', sans-serif;
-      font-size: 20px;
-      color: #ffffff;
-      text-align: center;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    h4 {
-      font-family: 'Roboto', sans-serif;
-      font-size: 16px;
-      color: #d9d9d9;
-      text-align: center;
-      line-height: 0%;
-    }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #353535;
+  color: #ffffff;
+  line-height: 1.6;
+}
 
-     
-    
+h1, h2, h3 {
+  font-family: 'Crimson Pro', serif;
+}
 
-    first {
-      padding: 10px 10px 10px 10px;
-      background-color: #d9d9d9;
-    }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background-color: #353535;
-      position: relative;
-      overflow: hidden;
-    }
-
-/* Background image with opacity */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('teen01.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      opacity: 0.3;   /* 👈 Adjust this (0.1 - 0.7) */
-      z-index: -1;
-    }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 
-    a {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #3c6e71;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 5px;
-      font-family: 'DM Sans', 'Roboto', sans-serif;
-      
-    }
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(53, 53, 53, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 18px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
 
-    con1 {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+}
 
-      .a1 {
-      display: flex;
-      justify-content: center;   /* center horizontally */
-      gap: 20px;                 /* space between buttons */
-      margin-top: 30px;
-    }
-    .icons {
-      display: flex;
-      justify-content: center;   /* center horizontally */
-      gap: 20px;                 /* space between icons */
-      margin-top: 30px;
-    }
+nav {
+  display: flex;
+  gap: 28px;
+}
 
-  </style>
+nav a {
+  position: relative;
+  font-size: 14px;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #3c6e71;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  color: #d9d9d9;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.primary {
+  background-color: #3c6e71;
+}
+
+.primary:hover {
+  background-color: #284b63;
+}
+
+.secondary {
+  border: 1px solid #d9d9d9;
+}
+
+.secondary:hover {
+  background-color: #d9d9d9;
+  color: #353535;
+}
+
+.hero-image {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3c6e71, #284b63);
+}
+
+
+
+.reel-section {
+  padding: 120px 8%;
+  background-color: #284b63;
+}
+
+.reel-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.reel-video video {
+  width: 450px;
+  border-radius: 12px;
+}
+
+.reel-info {
+  max-width: 600px;
+}
+
+.reel-info h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.reel-info p {
+  color: #d9d9d9;
+  margin-bottom: 15px;
+}
+
+
+
+.hub-section {
+  padding: 120px 8%;
+  background-color: #353535;
+  text-align: center;
+}
+
+.hub-section h2 {
+  font-size: 42px;
+  margin-bottom: 60px;
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.hub-card {
+  background-color: #284b63;
+  padding: 30px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.hub-card:hover {
+  transform: translateY(-8px);
+  background-color: #3c6e71;
+}
+
+.hub-card h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.sub-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sub-links a {
+  font-size: 14px;
+  color: #d9d9d9;
+  transition: 0.2s;
+}
+
+.sub-links a:hover {
+  color: #ffffff;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #284b63;
+  font-size: 14px;
+}
+
+
+
+@media (max-width: 900px) {
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    height: auto;
+    padding-top: 150px;
+    padding-bottom: 80px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .reel-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .reel-video video {
+    width: 100px;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+.bucket-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal columns */
+  gap: 60px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+.bucket-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bucket-list li {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.bucket-list .box {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #3c6e71;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+/* Responsive: for smaller screens */
+@media (max-width: 900px) {
+  .bucket-columns {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+</style>
 </head>
+
 <body>
- 
-  <br> <br> <br> <br> <br> <br><br><br>
-  <div class="first">
-  <h3>Welcome to my archive</h3>
-  <h1>Hi! I'm Maki Palmero</h1>
-  <h4>a 2nd Year BSCS  student in the University of The East - Manila</h4>
-  <h4>who's still unsure how to finish the program alive.</h4>
-  <br>
-  <div class="a1">
-  <a href="https://palmeromc.github.io/bio/">About Me</a>
-  <a href="https://palmeromc.github.io/BLOGG1/">My Blogs</a>
-  <a href="">Contact Me</a>
+
+<header>
+  <div class="logo">MC Palmero</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="https://palmeromc.github.io/bio/">Biography</a>
+    <a href="https://palmeromc.github.io/BLOGG1/">Blogs</a>
+    <a href="https://palmeromc.github.io/PhotoDump/">Gallery</a>
+    <a href="https://palmeromc.github.io/Media-Page/">Medias</a>
+    <a href="https://palmeromc.github.io/DreamPlacesToVisit/">Dream Places</a>
+    <a href="#bucketlist">Bucket List</a>
+    <a href="#contacts">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hi! I'm MC Palmero</h1>
+    <p>
+      I’m a 2nd Year BSCS student at the University of the East – Manila.
+      This website is my personal archive where I document my journey,
+      showcase my works, and share my interests.
+    </p>
+    <div class="hero-buttons">
+      <a href="https://palmeromc.github.io/bio/" class="btn primary">About Me</a>
+      <a href="#contacts" class="btn secondary">Contact</a>
+    </div>
+  </div>
+  <div class="hero-image"><img src="teen1.jpg" alt="My Official Photo" class="hero-image"></div>
+</section>
+
+<!-- SECTION 2: VIDEO REEL -->
+<section class="reel-section">
+  <div class="reel-container">
+    <div class="reel-video">
+      <video src="f56fe03883134ed1bf883fac6aaafdfe.mov" controls></video>
+    </div>
+    <div class="reel-info">
+      <h2>My Introduction Reel</h2>
+      <p>
+        A short visual collection representing my growth and highlights from childhood to college.
+      </p>
+      <p>
+        From a shy kid to a more expressive individual, this reel captures some core moments in my life including some sceneries and pets.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: NAVIGATION HUB -->
+<section class="hub-section" style="background-color: #FFFFFF;">
+  <h2 style="color: #353535;">Explore My Archive</h2>
+
+  <div class="hub-grid">
+
+    <div class="hub-card">
+      <a href="https://palmeromc.github.io/bio/"><h3>Biography</h3></a>
+      <div class="sub-links">
+        Childhood <br>
+        Teenager <br>
+        College <br>
+      </div>
+    </div>
+
+    <div class="hub-card">
+      <a href="https://palmeromc.github.io/BLOGG1/"><h3>Blogs</h3></a>
+      <div class="sub-links">
+        Blog 1<br>
+        Blog 2<br>
+        Blog 3<br>
+      </div>
+    </div>
+
+    
+    <div class="hub-card">
+      <a href="https://palmeromc.github.io/PhotoDump/">
+      <br>
+      <h3>Gallery</h3>
+      </a>
+    </div>
+
+    <div class="hub-card">
+      <a href="https://palmeromc.github.io/Media-Page/"><h3>Media</h3></a>
+      <div class="sub-links">
+        Beats <br>
+        Movies <br>
+        TV Shows <br>
+      </div>
+    </div>
+
+    <div class="hub-card">
+      <br>
+      <a href="https://palmeromc.github.io/DreamPlacesToVisit/"><h3>Dream Destinations</h3></a>
+    </div>
+
+    <div class="hub-card">
+      <br>
+      <a href="#bucketlist"><h3>Bucket List</h3></a>
+      <br>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 4: BUCKET LIST -->
+<section id="bucketlist" style="padding: 120px 8%; background-color: #353535;">
+  <h1 style="text-align: center;">My Bucket List</h1>
+
+  <div class="bucket-columns">
+    <!-- LEFT COLUMN -->
+    <ul class="bucket-list">
+      <li><span class="box"></span> Travel to Japan during cherry blossom season</li>
+      <li><span class="box"></span> Learn to play a musical instrument</li>
+      <li><span class="box"></span> Build my own computer from scratch</li>
+      <li><span class="box"></span> Attend a Blackpink concert</li>
+      <li><span class="box"></span> Master a programming language</li>
+      <li><span class="box"></span> Go skydiving or bungee jumping</li>
+      <li><span class="box"></span> Publish a short song or blog</li>
+      <li><span class="box"></span> Volunteer for a meaningful cause</li>
+      <li><span class="box"></span> Hike a famous mountain trail</li>
+      <li><span class="box"></span> Try scuba diving</li>
+      <li><span class="box"></span> Take a road trip across the Philippines</li>
+      <li><span class="box"></span> Learn a new language or dialect</li>
+    </ul>
+
+    <!-- RIGHT COLUMN -->
+    <ul class="bucket-list">
+      <li><span class="box"></span> Attend a Research convention or conference abroad</li>
+      <li><span class="box"></span> Learn photography professionally</li>
+      <li><span class="box"></span> Experience hot air ballooning</li>
+      <li><span class="box"></span> Visit Iceland for the Northern Lights</li>
+      <li><span class="box"></span> Visit Paris for the Eiffel Tower</li>
+      <li><span class="box"></span> Learn to surf</li>
+      <li><span class="box"></span> Start a music channel</li>
+      <li><span class="box"></span> Take a bouldering class</li>
+      <li><span class="box"></span> Go on a cruise vacation</li>
+      <li><span class="box"></span> Play badminton on an international league</li>
+      <li><span class="box"></span> Attend Comic-Con or similar festival</li>
+      <li><span class="box"></span> Run a marathon</li>
+    </ul>
+  </div>
+</section>
+
+
+<section id="contacts" style="padding: 120px 8%; background-color: #284b63;">
+  <h1 style="text-align: center; margin-bottom: 60px;">Contact Me</h1> <br>
+  
+  <div style="max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 30px; font-size: 18px;">
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <span style="font-weight: bold;">📞 Phone:</span>
+      <span>+63 977 468 0079</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <span style="font-weight: bold;">✉️ Email:</span>
+      <span>palmeromaki@gmail.com</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <span style="font-weight: bold;">🌐 Facebook:</span>
+      <span><a href="https://www.facebook.com/makipalmero" target="_blank" style="color: #ffffff; text-decoration: underline;">facebook.com/makipalmero</a></span>
+    </div>
   </div>
 
-   <div class="icons">
-    <a href="tel:+63774680079"><i class="fa-solid fa-phone"></i></a>
-    <a href="mailto:palmeromaki@gmail.com"><i class="fa-solid fa-envelope-open"></i></a>
-  </div>
+</section>
+
+<footer style="background-color: #353535;">
+  © 2026 Mc Palmero. All rights reserved. <br>
+  February 2026
+</footer>
+
 </body>
 </html>
-
